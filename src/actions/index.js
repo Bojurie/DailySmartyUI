@@ -9,7 +9,6 @@ export function fetchRecentPosts(){
     return function (dispatch){
         axios.get('https://api.dailysmarty.com/posts')
             .then(Response =>{
-                console.log(Response.data);
                 dispatch({
                     type: SET_RECENT_POSTS,
                     payload: Response.data.posts
@@ -19,15 +18,15 @@ export function fetchRecentPosts(){
     }
 }
 
-export function fetchPostsWithQuery(query){
+export function fetchPostsWithQuery(query, callback){
     return function (dispatch){
         axios.get(`https://api.dailysmarty.com/search?q=${query}`)
             .then(Response =>{
-                console.log(Response.data);
                 dispatch({
                     type: SET_RESULTS_POSTS,
                     payload: Response.data.posts
                 })
+                if(callback) {callback()}
             })
      
     }
