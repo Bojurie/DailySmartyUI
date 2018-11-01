@@ -15,7 +15,7 @@
     width: 66vw;
     display:grid;
     align-content: space-around;
-    justify-items: stretch;
+    // justify-items: stretch;
 
 }
 .logo-main,
@@ -24,7 +24,15 @@
     justify-items: center;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
 $color-gray-one: #666666;
 $color-gray-two: #B3b3b3;
+$color-blue-one: #0079ff;
 
 @import './searchBar';
+@import './recentPosts';
